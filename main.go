@@ -17,14 +17,19 @@ func getopt(name, def string) string {
 	return def
 }
 
+type Service struct {
+	Port int    `json:"port"`
+	Role string `json:"role"`
+}
+
 type Container struct {
-	Image    string            `json:"image"`
-	Name     string            `json:"name"`
-	Scale    int               `json:"scale"`
-	Env      map[string]string `json:"env"`
-	Links    []string          `json:"links"`
-	Command  []string          `json:"command"`
-	Services map[string]int    `json:"services"`
+	Image    string             `json:"image"`
+	Name     string             `json:"name"`
+	Scale    int                `json:"scale"`
+	Env      map[string]string  `json:"env"`
+	Links    []string           `json:"links"`
+	Command  []string           `json:"command"`
+	Services map[string]Service `json:"services"`
 }
 
 type Spec struct {
