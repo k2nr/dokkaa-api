@@ -68,7 +68,7 @@ func main() {
 				continue
 			}
 			key := keyBase + container.Name + "/manifest"
-			v, err := json.Marshal(&spec)
+			v, err := json.Marshal(&container)
 			if err != nil {
 				log.Println(err)
 				continue
