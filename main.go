@@ -74,7 +74,10 @@ func main() {
 				continue
 			}
 
-			ec.Set(key, string(v), 0)
+			_, err = ec.Set(key, string(v), 0)
+			if err != nil {
+				log.Println(err)
+			}
 		}
 	})
 
